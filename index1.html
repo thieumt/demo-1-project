@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h3>Tạo mật khẩu</h3>
+        <div class="result-container">
+            <span id="result"></span>
+            <button class="btn" id="clipboard">
+                <i class="far fa-clipboard"></i>
+            </button>
+        </div>
+        <div class="settings">
+            <div class="setting">
+                <label>Độ dài mật khẩu</label>
+                <input type="number" id="length" min="6" max="20" value="20">
+            </div>
+            <div class="setting">
+                <label>Chứa ký tự in hoa</label>
+                <input type="checkbox" id="uppercase" checked>
+            </div>
+            <div class="setting">
+                <label>Chứa ký tự thường</label>
+                <input type="checkbox" id="lowercase" checked>
+            </div>
+            <div class="setting">
+                <label>Chứa số</label>
+                <input type="checkbox" id="numbers" checked>
+            </div>
+            <div class="setting">
+                <label>Chứa ký tự đặc biệt</label>
+                <input type="checkbox" id="symbols" checked>
+            </div>           
+        </div>
+        <button class="btn btn-large" id="generate">Tạo mật khẩu</button>
+    </div>
+    <script src="script4.js"></script>
+</body>
+</html>
