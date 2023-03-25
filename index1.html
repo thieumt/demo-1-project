@@ -1,46 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style4.css">
-    <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400&family=Rubik:wght@600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+   
+   <title>Assignment 1</title>
 </head>
 <body>
-    <div class="container">
-        <h3>Tạo mật khẩu</h3>
-        <div class="result-container">
-            <span id="result"></span>
-            <button class="btn" id="clipboard">
-                <i class="far fa-clipboard"></i>
-            </button>
-        </div>
-        <div class="settings">
-            <div class="setting">
-                <label>Độ dài mật khẩu</label>
-                <input type="number" id="length" min="6" max="20" value="20">
+   <div class="container">
+      <header class="header">
+         <div class="navbar">
+            <a href="#">
+               <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg> </a>
+            
+           
+             <a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+             </svg>Home</a> 
+            <a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75" />
+             </svg>
+             About</a>
+         </div>
+         <h2>Pet Management</h2>
+      </header>
+      <main class="pet-main">
+         <section class="pet-sect-form">
+            <div class="form">
+               <form action="" class="pet-form">
+                  <div class="labe-inp">
+                     <label class="left " for="pet-id">Pet ID</label>
+                     <input class="big" id="pet-id" type="text" placeholder="Input ID must be unique! " required>
+                  </div>
+                  <div class="labe-inp">
+                     <label class="left" for="pet-name">Pet Name</label>
+                     <input class="small " id="pet-name" type="text" placeholder="Input Name" required>
+                     <label class="right" for="pet-age" min="1" max="15">Age</label>
+                     <input class="input-right" id="pet-age" type="text" placeholder="Input Age: 1 to 15!" required>
+                  </div>
+                  <div class="labe-inp">
+                     <label class="left" for="pet-type">Type</label>
+                     <select id="pet-type" class="big" name="petType" required>
+                        <option value="">Select Type</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="hamster">Hamster</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <input type="hidden" id="hidden-pet-type" name="hiddenPetType" value="pet-hiden">
+                  </div>
+                  <div class="labe-inp">
+                     <label class="left " for="pet-weight" min="1" max="15">weight</label>
+                     <input class="small" id="pet-weight" type="text" placeholder="Input Weight" required>
+                     <label class="right" for="pet-length" min="1" max="100">Length</label>
+                     <input class="input-right" id="pet-length" type="text" placeholder="Input Length" required>
+                  </div>
+                  <div class="labe-inp">
+                     <label class="left" for="pet-color">Color</label>
+                     <input type="color" name="favcolor" id="pet-color" class="small" value="#ff0000" required>
+                     <label class="right " for="pet-breed">Breed</label>
+                     <select class="input-right small" name="breed" id="pet-breed" required>
+                        <option value="">Select Breed</option>
+                        <option value="female">female</option>
+                        <option value="male">male</option>
+                        <option value="other">Other</option>
+                     </select>               
+                  </div>
+                  <div class="labe-inp inp-check">
+                     <input id="pet-vaccinated" type="checkbox">
+                     <label for="pet-vaccinated">Vaccinated</label>
+                     <input id="pet-dewormed" type="checkbox">
+                     <label for="pet-dewormed">Dewormed</label>
+                     <input id="pet-sterilized" type="checkbox">
+                     <label for="pet-sterilized">Sterilized</label>
+                  </div>           
+                  <div class="btn-form">
+                     <button id="pet-submit">Submit</button>
+                     <button id="pet-show-heal">Show Healthy</button>
+                  </div>
+               
+               </form>
             </div>
-            <div class="setting">
-                <label>Chứa ký tự in hoa</label>
-                <input type="checkbox" id="uppercase" checked>
+            
+         </section>
+         <section class="pet-sect-table">
+            <div class="table">
+               <table id="pet-table">
+                  <thead>
+                     <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Type</th>
+                        <th>Weight</th>
+                        <th>Length</th>
+                        <th>Breed</th>
+                        <th>Color</th>
+                        <th>Vaccinater</th>
+                        <th>Dewormed</th>
+                        <th>Steilized</th>
+                        <th>Date Added</th>
+                        <th>Action</th>
+                     </tr>
+                  </thead>
+                  <tbody id="table-body">
+                  
+                  </tbody>           
+            </table>
             </div>
-            <div class="setting">
-                <label>Chứa ký tự thường</label>
-                <input type="checkbox" id="lowercase" checked>
-            </div>
-            <div class="setting">
-                <label>Chứa số</label>
-                <input type="checkbox" id="numbers" checked>
-            </div>
-            <div class="setting">
-                <label>Chứa ký tự đặc biệt</label>
-                <input type="checkbox" id="symbols" checked>
-            </div>           
-        </div>
-        <button class="btn btn-large" id="generate">Tạo mật khẩu</button>
-    </div>
-    <script src="script4.js"></script>
+            
+         </section>
+      </main>
+   </div>
+   <script src="script.js"></script>
 </body>
 </html>
